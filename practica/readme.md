@@ -18,3 +18,14 @@ $ docker run --rm -it \
 node:alpine \
 sh -c "cd /app && npm run dev"
 ```
+
+## Correr la aplicación con DEBUG
+```bash
+$ docker run --rm -it \
+--mount type=bind,source=${PWD},target=/app \
+--name=demo-graphql-nodejs \
+--network=demo-graphql-nodejs \
+-p 3001:3001 \
+node:alpine \
+sh -c "cd /app && DEBUG=* npm run dev"
+```
